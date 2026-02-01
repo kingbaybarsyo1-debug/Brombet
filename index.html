@@ -1,81 +1,142 @@
-
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>الأناقة الباهرة – نظام إدارة المتاجر</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
-    <style>
-      body {
-        font-family: 'Tajawal', sans-serif;
-        background-color: #f8fafc;
-        -webkit-font-smoothing: antialiased;
-      }
-      
-      /* تخصيصات الطباعة الشاملة والقوية */
-      @media print {
-        /* إخفاء كل شيء بشكل افتراضي */
-        body * {
-          visibility: hidden;
-        }
-        
-        /* إظهار العناصر المحددة للطباعة فقط */
-        .print-area, .print-area * {
-          visibility: visible;
-        }
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prompt Library</title>
 
-        /* تحديد موضع منطقة الطباعة في أعلى الصفحة */
-        .print-area {
-          position: absolute;
-          left: 0;
-          top: 0;
-          width: 100% !important;
-          margin: 0 !important;
-          padding: 0 !important;
-        }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
 
-        /* إخفاء الواجهة تماماً */
-        header, nav, footer, .no-print, button, .quick-actions {
-          display: none !important;
-          height: 0 !important;
-          margin: 0 !important;
-          padding: 0 !important;
-        }
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:linear-gradient(135deg,#0f172a,#1e293b);
+  color:#fff;
+}
 
-        /* تهيئة الصفحة */
-        @page {
-          size: auto;
-          margin: 5mm;
-        }
+header{
+  padding:30px;
+  text-align:center;
+}
 
-        body {
-          background-color: white !important;
-        }
-      }
+header h1{
+  margin:0;
+  font-size:28px;
+}
 
-      ::-webkit-scrollbar { width: 6px; }
-      ::-webkit-scrollbar-track { background: #f1f5f9; }
-      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
-      .no-scrollbar::-webkit-scrollbar { display: none; }
-    </style>
-    <script type="importmap">
-    {
-      "imports": {
-        "recharts": "https://esm.sh/recharts@^3.6.0",
-        "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
-        "react/": "https://esm.sh/react@^19.2.3/",
-        "react": "https://esm.sh/react@^19.2.3",
-        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
-      }
-    }
-    </script>
-  <link rel="stylesheet" href="/index.css">
+header p{
+  color:#cbd5e1;
+}
+
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
+
+.card{
+  background:#020617;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+.card h2{
+  margin:0 0 10px 0;
+  font-size:20px;
+}
+
+textarea{
+  width:100%;
+  height:130px;
+  background:#020617;
+  color:#e5e7eb;
+  border:1px solid #334155;
+  border-radius:12px;
+  padding:12px;
+  resize:none;
+}
+
+.actions{
+  display:flex;
+  gap:10px;
+  margin-top:12px;
+}
+
+button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:linear-gradient(135deg,#6366f1,#3b82f6);
+  color:#fff;
+  font-size:14px;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:.85;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  color:#94a3b8;
+  font-size:13px;
+}
+</style>
 </head>
-  <body class="bg-slate-50 text-slate-900">
-    <div id="root"></div>
-  <script type="module" src="/index.tsx"></script>
+
+<body>
+
+<header>
+  <h1>🚀 مكتبة البرومبتات</h1>
+  <p>برومبتات احترافية جاهزة للاستخدام مع الذكاء الاصطناعي</p>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h2>🎯 بروفايل احترافي</h2>
+    <textarea>Ultra realistic 3D portrait of a confident man, soft lighting, clean background, cinematic depth, professional photography, 8k</textarea>
+    <div class="actions">
+      <button onclick="copy(this)">📋 نسخ البرومبت</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🔥 تصميم لوجو</h2>
+    <textarea>Minimal modern logo design, vector style, clean shapes, centered composition, white background, branding mockup</textarea>
+    <div class="actions">
+      <button onclick="copy(this)">📋 نسخ البرومبت</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>📸 منتج احترافي</h2>
+    <textarea>High-end product photography, studio lighting, soft shadows, isolated background, commercial advertising style, ultra detail</textarea>
+    <div class="actions">
+      <button onclick="copy(this)">📋 نسخ البرومبت</button>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © Prompt Library — Share & Earn
+</footer>
+
+<script>
+function copy(btn){
+  let ta = btn.parentElement.previousElementSibling;
+  ta.select();
+  ta.setSelectionRange(0,99999);
+  document.execCommand("copy");
+  alert("✅ تم نسخ البرومبت");
+}
+</script>
+
 </body>
 </html>
