@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الأناقة الباهرة – نظام إدارة المتاجر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js"></script>
+    <style>
+      body {
+        font-family: 'Tajawal', sans-serif;
+        background-color: #f8fafc;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      /* تخصيصات الطباعة الشاملة والقوية */
+      @media print {
+        /* إخفاء كل شيء بشكل افتراضي */
+        body * {
+          visibility: hidden;
+        }
+        
+        /* إظهار العناصر المحددة للطباعة فقط */
+        .print-area, .print-area * {
+          visibility: visible;
+        }
+
+        /* تحديد موضع منطقة الطباعة في أعلى الصفحة */
+        .print-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100% !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        /* إخفاء الواجهة تماماً */
+        header, nav, footer, .no-print, button, .quick-actions {
+          display: none !important;
+          height: 0 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        /* تهيئة الصفحة */
+        @page {
+          size: auto;
+          margin: 5mm;
+        }
+
+        body {
+          background-color: white !important;
+        }
+      }
+
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #f1f5f9; }
+      ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "recharts": "https://esm.sh/recharts@^3.6.0",
+        "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
